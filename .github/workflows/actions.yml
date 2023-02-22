@@ -20,6 +20,8 @@ jobs:
           python -m pip install --upgrade pip
           
       - name: execute py script # run main.py
+        env:
+            CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: python main.py
           
       - name: commit files
