@@ -1,6 +1,6 @@
 name: run main.py
 
-on: repository_dispatch
+on: workflow_dispatch
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
       - name: execute py script # run main.py
         env:
             CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-        run: python main.py
+        run: python main.py 22
           
       - name: commit files
         run: |
