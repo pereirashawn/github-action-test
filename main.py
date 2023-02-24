@@ -9,8 +9,8 @@ except KeyError:
     # or raise an error if it's not available so that the workflow fails
 
 print(" --- HELLO WORLD ---")
-
-AOBResult = {
+AOBResult = "AOBResult"
+AOBResultObj = {
      "isSuccess": True,
      "jsonString": "Library Success",
      "exceptionString": ""
@@ -18,7 +18,7 @@ AOBResult = {
 
 if "GITHUB_OUTPUT" in os.environ :
         with open(os.environ["GITHUB_OUTPUT"], "a") as f :
-            print(AOBResult, file=f)
+            print("{0}={1}".format(AOBResult, AOBResultObj, file=f))
 # num = (int)(sys.argv[1])
 # if(num%2 == 0):
 #     print("{} is an even number".format(num))
