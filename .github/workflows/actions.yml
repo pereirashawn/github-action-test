@@ -25,7 +25,7 @@ jobs:
         env:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
-          output=$(python main.py)
+          $output=$(python main.py)
           echo $output >> $GITHUB_OUTPUT
         id: step1
 
