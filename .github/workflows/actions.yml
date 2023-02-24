@@ -26,11 +26,11 @@ jobs:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
           output=(python main.py)
-          echo "::set-output name=changelog::$output"
+          echo $output >> $GITHUB_OUTPUT
         id: step1
 
       - name: Print output
-        run: echo "${{ steps.step1.outputs.changelog }}"
+        run: echo "${{ steps.step1.outputs.output }}"
 
       # work on python result
       - name: commit files
