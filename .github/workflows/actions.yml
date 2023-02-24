@@ -26,7 +26,7 @@ jobs:
         id: step1
 
       - name: Print output
-        run: echo "$GITHUB_OUTPUT"
+        run: echo "The count was ${{ steps.stepid.outputs.step1 }}"
 
       # work on python result
       - name: commit files
