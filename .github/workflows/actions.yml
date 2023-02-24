@@ -18,19 +18,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
 
-      - name: Run script
-        run: python main.py
-
       - name: execute py script # run main.py
         env:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
-          $output=$(python main.py)
-          echo $output >> $GITHUB_OUTPUT
+          python main.py
         id: step1
 
       - name: Print output
-        run: echo "${{ steps.step1.outputs.output }}"
+        run: echo "$GITHUB_OUTPUT"
 
       # work on python result
       - name: commit files
