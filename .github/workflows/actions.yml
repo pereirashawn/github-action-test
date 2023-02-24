@@ -1,4 +1,4 @@
-name: run main.py
+name: Test
 
 on: workflow_dispatch
 
@@ -18,14 +18,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
 
+      - name: Run script
+        run: python main.py
+
       - name: execute py script # run main.py
         env:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
-          output=$(python main.py 22)
-          output="${output//'%'/'%25'}"
-          output="${output//$'\n'/'%0A'}"
-          output="${output//$'\r'/'%0D'}" 
+          output=(python main.py)
           echo "::set-output name=changelog::$output"
         id: step1
 
