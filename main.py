@@ -18,7 +18,7 @@ AOBResult = {
 
 if "GITHUB_OUTPUT" in os.environ :
         with open(os.environ["GITHUB_OUTPUT"], "a") as f :
-            print(json.loads(AOBResult), file=f)
+            print(AOBResult, file=f)
 # num = (int)(sys.argv[1])
 # if(num%2 == 0):
 #     print("{} is an even number".format(num))
