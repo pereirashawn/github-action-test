@@ -7,7 +7,7 @@ except KeyError:
     CLIENT_SECRET = "Token not available!"
     # or raise an error if it's not available so that the workflow fails
 
-num = sys.argv[1]
+num = (int)(sys.argv[1])
 if(num%2 == 0):
     print("{} is an even number".format(num))
 else:
