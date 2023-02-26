@@ -1,11 +1,11 @@
 name: Test
 
 on: workflow_dispatch
-inputs:
-  user_input:
-    description: 'User Input:'
-    required: true
-    default: "14"
+  inputs:
+    user_input:
+      description: 'User Input:'
+      required: true
+      default: "14"
 
 jobs:
   build:
