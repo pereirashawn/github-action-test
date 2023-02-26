@@ -1,7 +1,7 @@
 import json
 import os
 
-env_file = os.environ['GITHUB_OUTPUT']
+env_file = os.getenv('GITHUB_ENV')
 print("value = {}".format(env_file))
 
 with open(env_file,"r") as file:

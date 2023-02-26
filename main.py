@@ -23,9 +23,13 @@ if(input_variable % 2 == 0):
 else:
     print("{} is an ODD number".format(input_variable))
 
-if "GITHUB_OUTPUT" in os.environ :
-        with open(os.environ["GITHUB_OUTPUT"], "a") as f :
-            f.write("AOBResult={}".format(AOBResultObj))
+
+env_file = os.getenv('GITHUB_ENV')
+with open (env_file,"a") as file:
+    file.write("AOBResult={}".format(AOBResultObj))
+# if "GITHUB_OUTPUT" in os.environ :
+#         with open(os.environ["GITHUB_OUTPUT"], "a") as f :
+#             f.write("AOBResult={}".format(AOBResultObj))
 
 
 
