@@ -28,9 +28,7 @@ jobs:
         env:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
-          INPUT_STORE=${{ github.event.inputs.user_input }}
-          RESULT=$(python main.py)
-          echo "script result is $(RESULT)"
+          INPUT_STORE=${{ github.event.inputs.user_input }} python main.py
         id: step1
 
       - name: Set color
