@@ -1,15 +1,11 @@
 import json
 import os
+import sys
 
-env_file = os.getenv('GITHUB_ENV')
-print("value = {}".format(env_file))
+AOBResult = (int)(sys.argv[0])
 
-with open(env_file,"r") as file:
-    print(file.read())
+AOBResultObj = json.loads(AOBResult)
 
-
-# AOBResultObj = json.loads(AOBResult)
-
-# print("isSucess: {}".format(AOBResultObj['isSuccess']))
-# print("jsonString: {}".format(AOBResultObj['jsonString']))
-# print("exceptionString: {}".format(AOBResultObj['exceptionString']))
+print("isSucess: {}".format(AOBResultObj['isSuccess']))
+print("jsonString: {}".format(AOBResultObj['jsonString']))
+print("exceptionString: {}".format(AOBResultObj['exceptionString']))
