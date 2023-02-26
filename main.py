@@ -5,6 +5,7 @@ import json
 try:
     CLIENT_SECRET = os.environ["CLIENT_SECRET"]
     input_variable = (int)(os.environ['INPUT_STORE'])
+    print("val: {}".format(input_variable))
 except KeyError:
     CLIENT_SECRET = "Token not available!"
     # or raise an error if it's not available so that the workflow fails
