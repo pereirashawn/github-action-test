@@ -27,7 +27,9 @@ jobs:
         id: step1
 
       - name: Print output
-        run: echo "The count was ${{ steps.step1.outputs.AOBResult }}"
+        run: |
+          echo "The count was ${{ steps.step1.outputs.AOBResult }}"
+          echo "The test value is ${{ steps.step1.outputs.TestValue }}"
 
       # work on python result
       - name: commit files
