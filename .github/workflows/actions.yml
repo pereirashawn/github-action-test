@@ -26,7 +26,7 @@ jobs:
         id: step1
 
       - name: Print output
-        run: echo "The count was ${{ steps.stepid.outputs.step1 }}"
+        run: echo "The count was ${{ steps.step1.outputs.AOBResult }}"
 
       # work on python result
       - name: commit files
