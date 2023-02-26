@@ -2,7 +2,7 @@ import json
 import os
 import sys
 
-AOBResult = (int)(sys.argv[0])
+AOBResult = sys.argv[0]
 
 AOBResultObj = json.loads(AOBResult)
 
