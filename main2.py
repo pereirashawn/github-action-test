@@ -2,7 +2,9 @@ import json
 import os
 import sys
 
-AOBResult = sys.argv[0]
+AOBResult = sys.argv[1]
+
+print("argument: {}".format(AOBResult))
 
 AOBResultObj = json.loads(AOBResult)
 
