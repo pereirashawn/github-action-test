@@ -29,11 +29,13 @@ jobs:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
           INPUT_STORE=${{ github.event.inputs.user_input }} python main.py
+          echo "AOB Result = ${{steps.step1.outputs.AOBResult}}"
         id: step1
 
-      - name: Set color
-        id: random-color-generator
-        run: echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
+      - name: pass new input # run main1.py
+        id: step2
+        run: |
+          INPUT_STORE=${{ steps.step1.outputs.AOBResult }} python main2.py
 
       - name: Print output
         run: |
