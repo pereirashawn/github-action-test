@@ -1,8 +1,12 @@
 import json
 import os
 
-AOBResult = os.environ['GITHUB_OUTPUT']
-print("value = {}".format(AOBResult))
+env_file = os.environ['GITHUB_OUTPUT']
+print("value = {}".format(env_file))
+
+with open(env_file,"r") as file:
+    print(file.read())
+
 
 # AOBResultObj = json.loads(AOBResult)
 
