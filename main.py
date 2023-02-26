@@ -18,7 +18,7 @@ AOBResultObj = {
 
 if "GITHUB_OUTPUT" in os.environ :
         with open(os.environ["GITHUB_OUTPUT"], "a") as f :
-            print("{0}={1}".format(AOBResult, AOBResultObj, file=f))
+            f.write("AOBResult={}".format(AOBResultObj))
 # num = (int)(sys.argv[1])
 # if(num%2 == 0):
 #     print("{} is an even number".format(num))
