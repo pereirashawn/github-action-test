@@ -33,7 +33,7 @@ jobs:
       - name: Print output
         run: |
           echo "The count was ${{ steps.step1.outputs.AOBResult }}"
-          run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
+          echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
 
       # work on python result
       - name: commit files
