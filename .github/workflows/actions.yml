@@ -35,12 +35,11 @@ jobs:
       - name: pass new input # run main1.py
         id: step2
         run: |
-          INPUT_STORE=${{ steps.step1.outputs.AOBResult }} python main2.py
+          python main2.py
 
       - name: Print output
         run: |
           echo "The count was ${{ steps.step1.outputs.AOBResult }}"
-          echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
 
       # work on python result
       - name: commit files

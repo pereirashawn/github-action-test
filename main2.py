@@ -1,7 +1,8 @@
 import json
 import os
 
-AOBResult = os.environ['INPUT_STORE']
+AOBResult = os.environ['GITHUB_OUTPUT']
+print(AOBResult)
 
 AOBResultObj = json.loads(AOBResult)
 
