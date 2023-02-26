@@ -23,13 +23,17 @@ jobs:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
           python main.py
-          echo "TestValue=Hello World" >> $GITHUB_OUTPUT
+          
         id: step1
+
+      - name: Set color
+        id: random-color-generator
+        run: echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
 
       - name: Print output
         run: |
           echo "The count was ${{ steps.step1.outputs.AOBResult }}"
-          echo "The test value is ${{ steps.step1.outputs.TestValue }}"
+          run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
 
       # work on python result
       - name: commit files
