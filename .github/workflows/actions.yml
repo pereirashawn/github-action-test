@@ -1,6 +1,11 @@
 name: Test
 
 on: workflow_dispatch
+inputs:
+  user_input:
+    description: 'User Input:'
+    required: true
+    default: "14"
 
 jobs:
   build:
@@ -22,8 +27,9 @@ jobs:
         env:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
-          python main.py
-          
+          INPUT_STORE=${{ github.event.inputs.myInput }}
+          result=$(python main.py)
+          echo "script result is $(result)"
         id: step1
 
       - name: Set color
